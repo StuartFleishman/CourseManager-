@@ -1,3 +1,7 @@
 <%= @course.name %>
+<br>
 <%= @course.subject %>
+<br>
 <%= @course.teacher %>
+<br>
+<%= link_to("edit course", edit_course_path(@course.id)) %>
