@@ -1,0 +1,12 @@
+<%= form_for @course do |f| %>
+<h1>Add a Course! </h1>
+<%= f.label 'Course Name' %>
+  <%= f.text_field :name%>
+  <br>
+  <%= f.label 'Course Subject' %>
+  <%= f.text_field :subject%>
+  <br>
+  <%= f.label 'Course Teacher' %>
+  <%= f.text_field :teacher%>
+  <%= f.submit "Add Course"%>
+<%end%>
