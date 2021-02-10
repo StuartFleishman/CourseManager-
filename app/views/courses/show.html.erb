@@ -5,3 +5,7 @@
 <%= @course.teacher %>
 <br>
 <%= link_to("edit course", edit_course_path(@course.id)) %>
+
+  <%= link_to 'Destroy Course', course_path(@course.id),
+               :confirm => 'Are you sure?',
+               :method => :delete %>
