@@ -1,3 +1,9 @@
 <h1>Hi username </h1>
 
+<ol>
+<% @courses.each do |course| %>
+  <li> <%= course.name %> </li>
+<%end %>
+</ol>
+
 <h2>Let's add a course</h2>
