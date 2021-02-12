@@ -1,0 +1,18 @@
+<%= form_for @note do |f| %>
+<%= f.label 'course' %>
+<%= f.fields_for :course do |c| %>
+  <%= c.label 'course Name' %>
+  <%= c.text_field :name%>
+  <br>
+  <%= c.label 'course Subject' %>
+  <%= c.text_field :subject%>
+  <br>
+  <%= c.label 'course Teacher' %>
+  <%= c.text_field :teacher%>
+<%end%>
+<br>
+<%= f.label 'content' %>
+  <%= f.text_area :content%>
+  <br>
+  <%= f.submit "submit"%>
+<%end%>

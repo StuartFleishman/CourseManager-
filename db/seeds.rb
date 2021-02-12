@@ -9,3 +9,6 @@
 
 Course.create(name:"algebra", teacher: "mr.mackye", subject:"math")
 Course.create(name:"algebra", teacher: "mr.mackye", subject:"math")
+
+Note.create(content:"hello")
+Note.create(content:"yikes")

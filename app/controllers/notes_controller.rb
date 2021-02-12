@@ -1,15 +1,24 @@
 class NotesController < ApplicationController 
 
   def index 
+    @notes = Note.all 
   end 
 
   def show 
   end 
 
   def new 
+    @note = Note.new 
+    @note.build_course
   end 
 
   def create 
+    @note = Note.create(note_params)
+    if @note.save 
+      redirect_to note_path(@note)
+    else 
+      render :new 
+    end
   end 
 
   def edit 
@@ -21,5 +30,11 @@ class NotesController < ApplicationController
   def destroy 
   end 
 
-  
+  private 
+
+  def note_params 
+    params.require(:note).permit(:content, course_ids:[], course_attributes:[:name, :subject, :teacher])
+  end 
+
+
 end 
