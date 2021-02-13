@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
    u = User.find_by_email(params[:email])
    if u && u.authenticate(params[:password])
       session[:user_id] = u.id
-      redirect_to user_path(u)
+      redirect_to courses_path
    else 
       flash[:message] = "Invalid credentials. Please try again"
       redirect_to '/login'
@@ -26,8 +26,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete[:user_id]
-    redirect_to '/login'
+    session.delete(:user_id)
+    redirect_to '/'
   end
 
   private 

@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Course.create(name:"algebra", teacher: "mr.mackye", subject:"math")
-Course.create(name:"algebra", teacher: "mr.mackye", subject:"math")
+stu = User.create(name: "stu", email: "stu@yahoo.com", password: "dairy")
+jo = User.create(name: "jo", email: "jo@yahoo.com", password: "vegan")
 
-Note.create(content:"hello")
-Note.create(content:"yikes")
+math = Course.create(name: "calculus", subject: "math", teacher: "mr.kay")
+tom = Course.create(name: "jerry", subject: "science", teacher: "mr.kay")
+
+stu.notes.create(content:"yolo")
