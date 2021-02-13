@@ -4,8 +4,8 @@ class User < ApplicationRecord
 
   has_secure_password 
 
-  # validates :first_name, presence: true
-  # validates :email, uniqueness: true
+  validates :name, presence: true
+  validates :email, :uniqueness => true 
 
   def self.create_from_omniauth(auth)
     User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u| 

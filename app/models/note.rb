@@ -2,7 +2,7 @@ class Note < ApplicationRecord
   belongs_to :user 
   belongs_to :course
 
-  #accepts_nested_attributes_for :course 
+  validates :content, length: { in: 6..500 }
 
   def course_attributes=(attr)
     attr.values.each do |a|

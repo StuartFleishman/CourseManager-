@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   post "/login", to: "sessions#create"
 
-  resources :users 
+  resources :users, :only => [:new, :create]
 
   get '/auth/:provider/callback', to: 'sessions#omniauth'
+
+  post '/logout', to: 'sessions#destroy'
 end

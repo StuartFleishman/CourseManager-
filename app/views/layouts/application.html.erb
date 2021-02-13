@@ -12,6 +12,7 @@
 
   <body>
   <%= button_to("Log in With Google", '/auth/google_oauth2')%>
+  <%= button_to("Logout", logout_path)%>
     <%= yield %>
   </body>
 </html>
