@@ -5,10 +5,14 @@ Rails.application.routes.draw do
   resources :notes 
 
   resources :courses do
-    resources :notes, only: [:index, :new]
+    resources :notes, only: [:index, :new, :create]
   end
 
-  resources :sessions 
+  get "/login", to: "sessions#new"
+
+  post "/login", to: "sessions#create"
 
   resources :users 
+
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
 end
