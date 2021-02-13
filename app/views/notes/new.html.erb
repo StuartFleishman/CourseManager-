@@ -1,8 +1,25 @@
+<% if @note.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@note.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+    <ul>
+      <% @note.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+
+
+
 <%= form_for @note do |f| %>
 <%= f.label 'course' %>
 <%= f.fields_for :course do |c| %>
-  <%= c.label 'course Name' %>
-  <%= c.text_field :name%>
+  <%= c.label 'course name' %>
+  <%= c.text_field :name %>
   <br>
   <%= c.label 'course Subject' %>
   <%= c.text_field :subject%>
