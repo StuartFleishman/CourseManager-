@@ -5,6 +5,7 @@ class NotesController < ApplicationController
   end 
 
   def show 
+    @note = Note.find(params[:id])
   end 
 
   def new 
@@ -13,7 +14,7 @@ class NotesController < ApplicationController
   end 
 
   def create 
-    @note = Note.create(note_params)
+    @note = current_user.notes.build(note_params)
     if @note.save 
       redirect_to note_path(@note)
     else 

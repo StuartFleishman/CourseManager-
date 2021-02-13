@@ -14,7 +14,7 @@ class CoursesController < ApplicationController
   end 
 
   def create 
-    @course = Course.new(course_params)
+    @course = current_user.courses.build(course_params)
       if @course.save 
         redirect_to course_path(@course)
       else 
