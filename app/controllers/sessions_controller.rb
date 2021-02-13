@@ -1,11 +1,16 @@
 class SessionsController < ApplicationController 
   def new
-    @user = User.new 
   end
 
   def create
-    session[:username] = params[:username]
-    redirect_to '/'
+   u = User.find_by_email(params[:email])
+   if u && u.authenticate(params[:password])
+      session[:user_id] = u.id
+      redirect_to user_path(u)
+   else 
+      flash[:message] = "Invalid credentials. Please try again"
+      redirect_to '/login'
+   end
   end
 
   def omniauth
@@ -21,8 +26,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete :user_id
-    redirect_to '/'
+    session.delete[:user_id]
+    redirect_to '/login'
   end
 
   private 

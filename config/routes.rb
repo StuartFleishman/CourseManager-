@@ -9,12 +9,15 @@ Rails.application.routes.draw do
   end
 
   get "/login", to: "sessions#new"
-
   post "/login", to: "sessions#create"
+  delete '/logout', to: "sessions#destroy"
 
-  resources :users, :only => [:new, :create]
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+  get '/users/:id', to: 'users#show', as: 'user'
+
 
   get '/auth/:provider/callback', to: 'sessions#omniauth'
 
-  post '/logout', to: 'sessions#destroy'
+
 end

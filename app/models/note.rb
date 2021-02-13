@@ -10,4 +10,6 @@ class Note < ApplicationRecord
       self.build_course(name: course)
     end
   end
+
+  # def self.ordered_by_date
 end
