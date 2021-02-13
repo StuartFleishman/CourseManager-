@@ -10,12 +10,13 @@ class CoursesController < ApplicationController
 
   def new 
     @course = Course.new 
+    @course.notes.build
   end 
 
   def create 
-    course = Course.new(course_params)
-      if course.save 
-        redirect_to courses_path 
+    @course = Course.new(course_params)
+      if @course.save 
+        redirect_to course_path(@course)
       else 
         render :new
       end 

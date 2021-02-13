@@ -1,1 +1,7 @@
 <h1>hi</h1>
+
+<ol>
+<% @notes.each do |note| %>
+  <li> <%= note.content%> </li>
+<%end %>
+</ol>

@@ -9,3 +9,8 @@
   <%= link_to 'Destroy Course', course_path(@course.id),
                :confirm => 'Are you sure?',
                :method => :delete %>
+
+
+<% @course.notes.each do |note| %>
+  <%= note.content %> 
+<% end %>
