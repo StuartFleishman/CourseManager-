@@ -1,4 +1,5 @@
 class NotesController < ApplicationController 
+  before_action :redirect_if_not_owner
 
   def index 
     @notes = Note.all 
@@ -23,6 +24,7 @@ class NotesController < ApplicationController
   end 
 
   def edit 
+    @note = Note.find(params[:id])
   end 
   
   def update 
@@ -36,6 +38,16 @@ class NotesController < ApplicationController
   def note_params 
     params.require(:note).permit(:content, course_ids:[], course_attributes:[:name, :subject, :teacher])
   end 
+
+  def redirect_if_not_owner
+    if current_user != @shoe.user
+      redirect_to notes_path, alert: "Not your note"
+    end
+  end
+
+  def find_note
+    @note = Note.find(params[:id])
+  end
 
 
 end 
