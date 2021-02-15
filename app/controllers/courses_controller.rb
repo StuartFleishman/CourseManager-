@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController 
-  before_action :find_course, :redirect_if_not_owner, only: [:show, :edit, :update, :destroy]
+   before_action :find_course, only: [:show, :edit, :update, :destroy]
+  #  :redirect_if_not_owner, only: [:show, :edit, :update, :destroy]
 
   def index 
     @courses = Course.all 
@@ -16,7 +17,7 @@ class CoursesController < ApplicationController
   def create 
     @course = current_user.courses.build(course_params)
       if @course.save 
-        redirect_to course_path(@course)
+        redirect_to courses_path
       else 
         render :new
       end 
@@ -49,10 +50,10 @@ class CoursesController < ApplicationController
   end
 
   def redirect_if_not_owner
-    if current_user != @course.user
-      redirect_to course_path, alert: "Not your course"
+    if current_user != @course.users
+      redirect_to root_path, alert: "Not your course"
     end
   end
 
-  
+
 end 

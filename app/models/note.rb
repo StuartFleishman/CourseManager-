@@ -1,5 +1,5 @@
 class Note < ApplicationRecord
-  belongs_to :user 
+  belongs_to :user, optional: true
   belongs_to :course
 
   validates :content, length: { in: 6..500 }

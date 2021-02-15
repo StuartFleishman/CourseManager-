@@ -15,7 +15,7 @@
 
 
 
-<%= form_for @note do |f| %>
+<%= form_for([@course, @note]) do |f| %>
 <%= f.label 'course' %>
 <%= f.fields_for :course do |c| %>
   <%= c.label 'course name' %>

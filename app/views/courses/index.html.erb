@@ -1,15 +1,19 @@
-<h1>Hi username </h1>
+
 
 <%= flash[:message] %>
 
+<h3>Here are all your courses</h3>
 <ol>
 <% @courses.each do |course| %>
-  <li> <%= link_to course.name, course_path(course.id) %> </li>
+  <li> <%= link_to course.name, course_path(course) %> </li>
 <%end %>
 </ol>
 
 <h2>Let's add a course</h2>
 <%= link_to 'add course', new_course_path %>
+
+
+
 
 
 

@@ -1,8 +1,8 @@
-<%= @course.name %>
+Course name: <%= @course.name %>
 <br>
-<%= @course.subject %>
+Course Subject: <%= @course.subject %>
 <br>
-<%= @course.teacher %>
+Course Teacher: <%= @course.teacher %>
 <br>
 <%= link_to("edit course", edit_course_path(@course.id)) %>
 
@@ -11,6 +11,4 @@
                :method => :delete %>
 
 
-<% @course.notes.each do |note| %>
-  <%= note.content %> 
-<% end %>
+<%= link_to("make a new note", new_course_note_path(@course.id)) %>

@@ -13,8 +13,12 @@ class NotesController < ApplicationController
   end 
 
   def new 
-    @note = Note.new 
-    @note.build_course
+    if params[:course_id] && @course = Course.find_by_id(params[:course_id])
+      @note = @course.notes.build
+    else
+      @note = Note.new 
+      @note.build_course
+    end
   end 
 
   def create 

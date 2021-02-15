@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+   <%= f.collection_check_boxes :note_ids, Note.all, :id, :content %>
+  <%= f.label 'Course Teacher' %>
+  <%= f.text_field :teacher%>
+  
+  <%= f.fields_for :notes do |c| %>
+  <%= c.label 'content' %>
+  <%= c.text_area :content%>
+  <br>
+<%end%>
