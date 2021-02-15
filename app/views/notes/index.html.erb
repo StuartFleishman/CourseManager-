@@ -1,5 +1,7 @@
 <h1>Notes</h1>
 
+<%= display_header(@course) %>
+
 <ol>
 <% @notes.each do |note| %>
   <li> <%= note.content%> </li>
@@ -8,3 +10,4 @@
 
  <h3>last created note </h3>
  <%= @notes.last_created_note %>
+
