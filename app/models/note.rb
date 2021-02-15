@@ -11,5 +11,8 @@ class Note < ApplicationRecord
     end
   end
 
-  # def self.ordered_by_date
+  def self.last_created_note
+    self.order('created_at DESC').first
+  end
+
 end
