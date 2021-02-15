@@ -1,12 +1,11 @@
 class NotesController < ApplicationController 
-  before_action :redirect_if_not_owner
+  before_action :find_note, :redirect_if_not_owner,  only: [:show, :edit, :update, :destroy]
 
   def index 
     @notes = Note.all 
   end 
 
   def show 
-    @note = Note.find(params[:id])
   end 
 
   def new 
@@ -15,7 +14,9 @@ class NotesController < ApplicationController
   end 
 
   def create 
-    @note = current_user.notes.build(note_params)
+    #@note = current_user.notes.build(note_params)
+    @note = Note.new(note_params)
+    @note.user_id = session[:user_id]
     if @note.save 
       redirect_to note_path(@note)
     else 
@@ -24,7 +25,6 @@ class NotesController < ApplicationController
   end 
 
   def edit 
-    @note = Note.find(params[:id])
   end 
   
   def update 
@@ -40,7 +40,7 @@ class NotesController < ApplicationController
   end 
 
   def redirect_if_not_owner
-    if current_user != @shoe.user
+    if current_user != @note.user
       redirect_to notes_path, alert: "Not your note"
     end
   end

@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController 
-  before_action :find_course, only: [:show, :edit, :update, :destroy]
+  before_action :find_course, :redirect_if_not_owner, only: [:show, :edit, :update, :destroy]
 
   def index 
     @courses = Course.all 
@@ -47,4 +47,12 @@ class CoursesController < ApplicationController
   def course_params 
     params.require(:course).permit(:name,:subject,:teacher,notes_attributes:[:content])
   end
+
+  def redirect_if_not_owner
+    if current_user != @course.user
+      redirect_to course_path, alert: "Not your course"
+    end
+  end
+
+  
 end 
