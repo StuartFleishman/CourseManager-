@@ -5,3 +5,8 @@
 
 <br>
 <%= link_to 'edit', edit_note_path(@note) %>
+
+
+  <%= link_to 'Destroy note', note_path(@note.id),
+               :confirm => 'Are you sure?',
+               :method => :delete %>

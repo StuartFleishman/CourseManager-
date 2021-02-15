@@ -4,6 +4,15 @@ Course Subject: <%= @course.subject %>
 <br>
 Course Teacher: <%= @course.teacher %>
 <br>
+
+<% if @course.notes %>
+  <%= @course.notes.each do |note| %>
+    <%= note.content %>
+    <% end %>
+  <% end %>
+
+
+
 <%= link_to("edit course", edit_course_path(@course.id)) %>
 
   <%= link_to 'Destroy Course', course_path(@course.id),
