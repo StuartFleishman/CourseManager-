@@ -22,9 +22,7 @@ class NotesController < ApplicationController
   end 
 
   def create 
-    #@note = current_user.notes.build(note_params)
-    @note = Note.new(note_params)
-    @note.user_id = session[:user_id]
+    @note = current_user.notes.build(note_params)
     if @note.save 
       redirect_to note_path(@note)
     else 
@@ -51,7 +49,7 @@ class NotesController < ApplicationController
   private 
 
   def note_params 
-    params.require(:note).permit(:content, course_ids:[], course_attributes:[:name, :subject, :teacher])
+    params.require(:note).permit(:content, :course_id, course_attributes:[:name, :subject, :teacher])
   end 
 
   def redirect_if_not_owner

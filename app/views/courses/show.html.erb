@@ -5,8 +5,9 @@ Course Subject: <%= @course.subject %>
 Course Teacher: <%= @course.teacher %>
 <br>
 
+content:
 <% if @course.notes %>
-  <%= @course.notes.each do |note| %>
+  <% @course.notes.each do |note| %>
     <%= note.content %>
     <% end %>
   <% end %>

@@ -22,11 +22,5 @@
   <br>
   <%= f.label 'Course Teacher' %>
   <%= f.text_field :teacher%>
-
-  <%= f.fields_for :notes do |c| %>
-  <%= c.label 'content' %>
-  <%= c.text_area :content%>
-  <br>
-<%end%>
- <%= f.submit "Submit"%>
+ <%= f.submit %>
 <%end%>
