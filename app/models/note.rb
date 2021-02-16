@@ -12,7 +12,7 @@ class Note < ApplicationRecord
   end
 
   def self.last_created_note
-    self.order('created_at DESC').first
+     order('created_at DESC').first
   end
 
 end

@@ -5,4 +5,9 @@ class Course < ApplicationRecord
   validates :name, :subject, :teacher, presence: true
   accepts_nested_attributes_for :notes
 
+
+  def self.alphabetical_name
+     order(name: :asc).to_a
+  end
+
 end

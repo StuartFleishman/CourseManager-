@@ -12,6 +12,16 @@
 <h2>Let's add a course</h2>
 <%= link_to 'add course', new_course_path %>
 
+<h3>Alphabetized Courses </h3>
+<% @courses.alphabetical_name.each do |course| %>
+  <li> <%= link_to course.name, course_path(course) %> </li>
+<%end %>
+</ol>
+
+
+
+
+
 
 
 

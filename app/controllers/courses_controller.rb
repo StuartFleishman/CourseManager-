@@ -1,6 +1,5 @@
 class CoursesController < ApplicationController 
-   before_action :find_course, only: [:show, :edit, :update, :destroy]
-  #  :redirect_if_not_owner, only: [:show, :edit, :update, :destroy]
+   before_action :find_course, :redirect_if_not_owner, only: [:show, :edit, :update, :destroy]
 
   def index 
     @courses = Course.all 
