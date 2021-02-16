@@ -4,10 +4,10 @@
 
 <ol>
 <% @notes.each do |note| %>
-  <li> <%= note.content%> </li>
+  <li> <%= link_to(note.content, note_path(note)) %> </li>
 <%end %>
 </ol>
 
  <h3>last created note </h3>
- <%= @notes.last_created_note.content %>
+ <%= @notes.last_created_note %>
 

@@ -46,7 +46,7 @@ class CoursesController < ApplicationController
   end 
 
   def course_params 
-    params.require(:course).permit(:name,:subject,:teacher,notes_attributes:[:content])
+    params.require(:course).permit(:name,:subject,:teacher, notes_ids:[], notes_attributes:[:content])
   end
 
   def redirect_if_not_owner

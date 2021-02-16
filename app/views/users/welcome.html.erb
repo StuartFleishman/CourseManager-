@@ -2,5 +2,4 @@
 
 
  
- <h2>New Users Please Signup!</h2>
- <%= link_to  "signup", signup_path %>
+ <h2>New Users Please <%= link_to  "signup", signup_path %> or <%= button_to("Log in With Google", '/auth/google_oauth2')%> </h2>
