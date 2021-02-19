@@ -1,7 +1,7 @@
 class Course < ApplicationRecord
   before_save :capitalize_name
   
-  has_many :notes
+  has_many :notes, dependent: :destroy
   has_many :users, through: :notes 
 
   validates :name, :subject, :teacher, presence: true

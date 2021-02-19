@@ -1,5 +1,5 @@
 class NotesController < ApplicationController 
-  before_action :find_note, :redirect_if_not_owner,  only: [:show, :edit, :update, :destroy]
+  before_action :find_note, :redirect_if_not_owner, only: [:show, :edit, :update, :destroy]
 
   def index 
     if params[:course_id] && @course = Course.find_by_id(params[:course_id])
