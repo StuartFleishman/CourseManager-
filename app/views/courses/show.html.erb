@@ -5,7 +5,7 @@ Course Subject: <%= @course.subject %>
 Course Teacher: <%= @course.teacher %>
 <br>
 
-Content:
+<%= link_to("Notes", course_notes_path(@course)) %>
 <% if @course.notes %>
   <ul><% @course.notes.each do |note| %>
     <li> <%= link_to(note.content, note_path(note)) %></li>
