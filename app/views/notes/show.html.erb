@@ -1,12 +1,12 @@
+Course Name: <%= @note.course.name %>
 <br>
+Content:
 <%= @note.content %>
 
-<%= @note.course.name if @note.course %>
+<br>
+<%= link_to 'Edit', edit_note_path(@note) %>
 
 <br>
-<%= link_to 'edit', edit_note_path(@note) %>
-
-
   <%= link_to 'Destroy note', note_path(@note.id),
                :confirm => 'Are you sure?',
                :method => :delete %>
