@@ -1,4 +1,5 @@
 class UsersController < ApplicationController 
+  layout false 
 
   def welcome 
   end 

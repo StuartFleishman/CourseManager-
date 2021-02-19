@@ -2,18 +2,12 @@
 
 <%= flash[:message] %>
 
-<h3>Here are all your courses</h3>
-<ol>
-<% @courses.each do |course| %>
-  <li> <%= link_to course.name, course_path(course) %> </li>
-<%end %>
-</ol>
-
-<h3>Alphabetized Courses </h3>
+<h3>Courses</h3>
+<ul>
 <% @courses.alphabetical_name.each do |course| %>
   <li> <%= link_to course.name, course_path(course) %> </li>
 <%end %>
-</ol>
+</ul>
 
 
 
