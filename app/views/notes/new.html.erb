@@ -1,1 +1,10 @@
-<%= render 'form' %>
+<%= render partial: 'shared/error', locals: { note: @note } %>
+
+<%= form_for([@course, @note]) do |f| %>
+  <%= display_course_fields(@course, f) %>
+<br>
+<%= f.label 'content' %>
+  <%= f.text_area :content%>
+  <br>
+  <%= f.submit %>
+<%end%>

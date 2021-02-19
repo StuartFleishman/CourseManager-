@@ -7,4 +7,5 @@
   <li> <%= link_to(note.content, note_path(note)) %> </li>
 <%end %>
 </ol>
-
+<br>
+<%= link_to("Make A New Note", new_course_note_path(@course.id)) %>

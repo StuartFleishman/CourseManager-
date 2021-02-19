@@ -6,11 +6,7 @@ Course Teacher: <%= @course.teacher %>
 <br>
 
 <%= link_to("Notes", course_notes_path(@course)) %>
-<% if @course.notes %>
-  <ul><% @course.notes.each do |note| %>
-    <li> <%= link_to(note.content, note_path(note)) %></li>
-    <% end %> </ul>
-  <% end %>
+<br>
 
 <br>
 <%= link_to("Make A New Note", new_course_note_path(@course.id)) %>
