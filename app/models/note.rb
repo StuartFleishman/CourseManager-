@@ -8,8 +8,5 @@ class Note < ApplicationRecord
         self.course = Course.find_or_create_by(name: attr[:name], subject: attr[:subject], teacher: attr[:teacher])
   end
 
-  def self.last_created_note
-     order('created_at DESC').first
-  end
 
 end
