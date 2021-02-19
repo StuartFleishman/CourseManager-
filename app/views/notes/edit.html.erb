@@ -3,7 +3,7 @@
 <%= form_for(@note) do |f| %>
   <% f.hidden_field :course_id  %>
 <%= f.label 'content' %>
-  <%= f.text_area :content%>
+  <%= f.text_area(:content, cols: 80, rows: 10)%>
   <br>
   <%= f.submit %>
 <%end%>
