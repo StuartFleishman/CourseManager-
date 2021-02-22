@@ -1,5 +1,6 @@
 class NotesController < ApplicationController 
-  before_action :find_note, :redirect_if_not_owner, only: [:show, :edit, :update, :destroy]
+  before_action :find_note, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_if_not_owner, only: [:edit, :update, :destroy]
 
   def index 
     if params[:course_id] && @course = Course.find_by_id(params[:course_id])
@@ -54,7 +55,8 @@ class NotesController < ApplicationController
 
   def redirect_if_not_owner
     if current_user != @note.user
-      redirect_to notes_path, alert: "Not your note"
+      flash[:message] =  "Not your note"
+      redirect_to notes_path
     end
   end
 

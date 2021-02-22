@@ -1,12 +1,6 @@
-
-
 <h1>Welcome to Course Manager</h1>
 
-
- 
- <h4>New Users Please <%= link_to  "signup", signup_path %> or </h4>
+<h4>New Users Please <%= link_to  "signup", signup_path %> or </h4>
  <br>
  <%= button_to("Log in With Google", '/auth/google_oauth2')%> 
  <br>
- Existing Users:
- <%= link_to "Log In", login_path %>

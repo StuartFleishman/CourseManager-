@@ -1,12 +1,20 @@
-
+<% if flash[:message] %>
+  <div class="field_with_errors">
+  <%= flash[:message] %>
+  </div>
+<% end %>
 
 <%= display_header(@course) %>
 
 <ol>
-<% @notes.each do |note| %>
-  <li> <%= link_to(note.content, note_path(note)) %> </li>
+<% @notes.created_at.each do |note| %>
+  <li> <%= link_to(note.content, note_path(note)) %> </li> 
+        <h6> created by: <%= note.user.name %> </h6>
+       <h6> course: <%= note.course.name %> </h6>
 <%end %>
 </ol>
+
+
 
 
 <%= display_link_to_new_note(@course) %>
@@ -14,3 +22,5 @@
 <%= display_link_to_edit_course(@course)%>
 <br>
 <%= display_link_to_delete_course(@course) %>
+
+

@@ -1,4 +1,4 @@
-<h1>Log In Here!</h1>
+<h1>Log In </h1>
 
 <%= form_with(url: '/login') do |f| %>
   <%= f.label :email %>
@@ -10,6 +10,8 @@
 
 <%= link_to("Home", root_path) %>
 
-  <% if flash[:message] %>
-    <div class="field_with_errors"><%= flash[:message] %></div>
-    <% end %>
+<% if flash[:message] %>
+  <div class="field_with_errors">
+  <%= flash[:message] %>
+  </div>
+<% end %>

@@ -1,12 +1,14 @@
-
-
+<%= render partial: 'shared/error', locals: { note: @user } %>
 
 <%= form_with(model: @user, url:'/signup', local: true) do |f| %>
-<%= f.label 'name'%>
-  <%= f.text_field :name %>
-  <%= f.label 'email'%>
-  <%= f.text_field :email %>
-  <%= f.label 'password'%>
-  <%= f.password_field :password %>
-   <%= f.submit "Submit"%>
+    <%= f.label 'name'%>
+    <%= f.text_field :name %>
+
+    <%= f.label 'email'%>
+    <%= f.text_field :email %>
+
+    <%= f.label 'password'%>
+    <%= f.password_field :password %>
+
+    <%= f.submit "Submit"%>
 <%end%>
