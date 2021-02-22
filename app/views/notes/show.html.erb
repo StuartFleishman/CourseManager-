@@ -7,6 +7,6 @@ Content:
 <%= link_to 'Edit', edit_note_path(@note) %>
 
 <br>
-  <%= link_to 'Delete Note', note_path(@note.id),
+<%= link_to 'Delete Note', note_path(@note.id),
                :confirm => 'Are you sure?',
                :method => :delete %>

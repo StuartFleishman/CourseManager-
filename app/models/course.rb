@@ -4,7 +4,8 @@ class Course < ApplicationRecord
   has_many :notes, dependent: :destroy
   has_many :users, through: :notes 
 
-  validates :name, :subject, :teacher, uniqueness: true,  presence: true
+  validates :name, presence: true
+  validates_uniqueness_of :name, case_sensitive: false
  
   
   def capitalize_name
@@ -16,8 +17,6 @@ class Course < ApplicationRecord
      order(name: :asc).to_a
   end
 
-  def self.find_or_create_by(course_params)
-    Course.find_or_create_by(course_params)
-  end
+
 
 end

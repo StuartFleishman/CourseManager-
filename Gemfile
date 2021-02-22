@@ -35,7 +35,7 @@ gem 'omniauth-google-oauth2'
 
 
 
-gem 'aws-sdk-rails'
+gem 'aws-sdk', '~> 3'
 
 
 group :development, :test do
