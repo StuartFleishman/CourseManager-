@@ -1,8 +1,9 @@
 class CoursesController < ApplicationController 
    before_action :find_course, only: [:show, :edit, :update, :destroy]
+   
 
   def index 
-    @courses = Course.all 
+    @courses = Course.all
   end 
 
   def show 
@@ -16,7 +17,7 @@ class CoursesController < ApplicationController
   def create 
     @course = current_user.courses.build(course_params)
       if @course.save 
-        redirect_to courses_path
+        redirect_to @course
       else 
         render :new
       end 
@@ -47,6 +48,7 @@ class CoursesController < ApplicationController
   def course_params 
     params.require(:course).permit(:name,:subject,:teacher, notes_attributes:[:content])
   end
+
 
 
 

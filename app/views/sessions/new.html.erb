@@ -7,3 +7,9 @@
   <%= f.password_field :password %><br>
   <%= f.submit "log in"%>
 <% end %>
+
+<%= link_to("Home", root_path) %>
+
+  <% if flash[:message] %>
+    <div class="field_with_errors"><%= flash[:message] %></div>
+    <% end %>

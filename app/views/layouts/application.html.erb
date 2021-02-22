@@ -21,9 +21,7 @@
 
  
 
-  <% if flash[:message] %>
-    <div class="field_with_errors"><%= flash[:message] %></div>
-    <% end %>
+
     </nav>
   <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,10 +39,6 @@
         </li>
           <li class="nav-item">
           <%= link_to 'Notes', notes_path, :class => "nav-link active" %>
-        </li>
-          </li>
-          <li class="nav-item">
-          <%= link_to 'Create Note', new_note_path, :class => "nav-link active" %>
         </li>
       </ul>
            <% if logged_in? %>

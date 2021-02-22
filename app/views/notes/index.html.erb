@@ -7,6 +7,10 @@
   <li> <%= link_to(note.content, note_path(note)) %> </li>
 <%end %>
 </ol>
-<br>
+
 
 <%= display_link_to_new_note(@course) %>
+<br>
+<%= display_link_to_edit_course(@course)%>
+<br>
+<%= display_link_to_delete_course(@course) %>

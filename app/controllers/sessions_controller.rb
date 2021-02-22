@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController 
+  layout false 
+
   def new
   end
 
@@ -18,10 +20,10 @@ class SessionsController < ApplicationController
 
     if @user.valid?
       session[:user_id] = @user.id 
-      redirect_to new_course_path
+      redirect_to courses_path
     else
       flash[:message] = user.errors.full_messages.join("")
-      redirect_to courses_path
+      redirect_to root_path
     end
   end
 
