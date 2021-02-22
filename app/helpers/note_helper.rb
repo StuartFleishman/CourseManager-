@@ -32,8 +32,8 @@ module NoteHelper
   end
 
   def display_link_to_delete_course(course)
-    if course 
-      link_to 'Delete Course', course_path(@course.id),
+    if course
+      link_to 'Delete Course', course_path(course.id),
                :confirm => 'Are you sure?',
                :method => :delete 
     end

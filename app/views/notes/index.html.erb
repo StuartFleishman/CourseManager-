@@ -6,13 +6,13 @@
 
 <%= display_header(@course) %>
 
-<ol>
+<ul>
 <% @notes.created_at.each do |note| %>
   <li> <%= link_to(note.content, note_path(note)) %> </li> 
         <h6> created by: <%= note.user.name %> </h6>
-       <h6> course: <%= note.course.name %> </h6>
+         <h6> course: <%= note.course.name %>
 <%end %>
-</ol>
+</ul>
 
 
 

@@ -3,6 +3,8 @@
 <% @courses.alphabetical_name.each do |course| %>
   <li> 
   <%= link_to course.name, course_notes_path(course) %> 
+  <h6> subject: <%= course.subject %> <h6>
+ <h6> teacher: <%= course.teacher %> </h6>
 <%end %>
 </ul>
 

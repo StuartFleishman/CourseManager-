@@ -9,7 +9,7 @@ class Note < ApplicationRecord
   end
 
   def self.created_at
-    order(:created_a).to_a
+    order(created_at: :desc).to_a
  end
 
 
