@@ -3,10 +3,6 @@ class UsersController < ApplicationController
   def welcome 
   end
 
-  def home 
-  end 
-
-  
   def new 
     @user = User.new
   end 

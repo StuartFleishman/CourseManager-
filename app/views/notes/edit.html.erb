@@ -2,7 +2,9 @@
 
 <%= form_for(@note) do |f| %>
   <% f.hidden_field :course_id  %>
-<%= f.label 'content' %>
+  <%= f.label 'topic'%>
+  <%= f.text_field :topic %>
+  <br>
   <%= f.text_area(:content, cols: 80, rows: 10)%>
   <br>
   <%= f.submit %>

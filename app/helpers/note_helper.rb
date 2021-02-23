@@ -4,7 +4,7 @@ module NoteHelper
     if course
        tag.h1("#{course.name}") 
     else 
-        tag.h2("all the notes") 
+        tag.h2("notes") 
       end 
   end
 

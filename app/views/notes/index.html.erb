@@ -8,10 +8,12 @@
 
 <ul>
 <% @notes.created_at.each do |note| %>
-  <li> <%= link_to(note.content, note_path(note)) %> </li> 
-        <h6> created by: <%= note.user.name %> </h6>
-         <h6> course: <%= note.course.name %>
-<%end %>
+  <li>  
+    <h4> <b> Topic: </b> <%= link_to(note.topic, note_path(note)) %> </h4>
+    <h6> <b> Course: </b> <%= note.course.name %> </h6>
+    <h6> <b> Created By: </b> <%= note.user.name %> </h6>
+  </li> 
+<% end %>
 </ul>
 
 <br>

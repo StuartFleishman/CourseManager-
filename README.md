@@ -1,34 +1,18 @@
-# README
+Course Manager is an app for keeping track of notes.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation
+Install Ruby & Ruby on Rails
 
-Things you may want to cover:
+Usage
+After you clone, run bundle, then rails s
 
-* Ruby version
+User.create # returns a new user
+Course.create # returns a new course
+User.notes.create # returns a user associated with a note
+Course.notes.create # returns a course associated with a course
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* System dependencies
+Please make sure to update tests as appropriate.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-   <%= f.collection_check_boxes :note_ids, Note.all, :id, :content %>
-  <%= f.label 'Course Teacher' %>
-  <%= f.text_field :teacher%>
-  
-  <%= f.fields_for :notes do |c| %>
-  <%= c.label 'content' %>
-  <%= c.text_area :content%>
-  <br>
-<%end%>
+License
+MIT
