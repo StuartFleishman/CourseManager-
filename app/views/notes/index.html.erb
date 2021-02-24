@@ -5,7 +5,9 @@
 <% end %>
 
 <%= display_header(@course) %>
-
+<h3> <%= display_link_to_new_note(@course) %> </h3>
+<br>
+<br>
 <ul>
 <% @notes.created_at.each do |note| %>
   <li>  

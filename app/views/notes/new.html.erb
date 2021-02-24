@@ -1,7 +1,7 @@
 <%= render partial: 'shared/error', locals: { note: @note } %>
 
 <%= form_for([@course, @note]) do |f| %>
-  <%= display_course_fields(@course, f) %>
+  <%= f.hidden_field :course_id %>
   <%= f.label 'topic'%>
   <%= f.text_field :topic%>
   <br>

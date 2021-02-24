@@ -50,7 +50,7 @@ class NotesController < ApplicationController
   private 
 
   def note_params 
-    params.require(:note).permit(:content, :topic, :course_id, course_attributes:[:name, :subject, :teacher])
+    params.require(:note).permit(:content, :topic, :course_id)
   end 
 
   def redirect_if_not_owner
