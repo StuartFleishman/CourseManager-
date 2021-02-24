@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: 'users#welcome'
+  root to: "users#welcome"
 
   resources :notes 
 
@@ -10,15 +10,15 @@ Rails.application.routes.draw do
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
-  delete '/logout', to: "sessions#destroy"
+  delete "/logout", to: "sessions#destroy"
 
-  get '/signup', to: 'users#new'
-  post '/signup', to: 'users#create'  
+  get "/signup", to: "users#new"
+  post "/signup", to: "users#create"  
 
 
-  get '/auth/:provider/callback', to: 'sessions#omniauth'
+  get "/auth/:provider/callback", to: "sessions#omniauth"
 
-  get '/home', to: "users#home"
+
 
 
 end
