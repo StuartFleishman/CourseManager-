@@ -1,8 +1,4 @@
-<% if flash[:message] %>
-  <div class="field_with_errors">
-  <%= flash[:message] %>
-  </div>
-<% end %>
+<%= render partial: 'shared/flash', locals: { flash: flash } %>
 
 <%= display_header(@course) %>
 <h3> <%= display_link_to_new_note(@course) %> </h3>

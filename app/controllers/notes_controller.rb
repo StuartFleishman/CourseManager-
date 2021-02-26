@@ -36,7 +36,7 @@ class NotesController < ApplicationController
   
   def update 
     if @note.update(note_params)
-      redirect_to @note
+      redirect_to note_path(@note)
     else
       render :edit
     end

@@ -2,11 +2,15 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "users#welcome"
 
-  resources :notes 
+  resources :notes, only: [:index, :edit, :show, :update, :destroy]
 
   resources :courses do
     resources :notes, only: [:index, :new, :create]
   end
+
+  resources :users do 
+    resources :courses, only: [:index, :new, :create]
+  end 
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
