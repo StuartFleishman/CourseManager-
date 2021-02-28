@@ -1,9 +1,7 @@
 <h3>Courses</h3>
 <ul>
 <% @courses.alphabetical_name.each do |course| %>
-  <li> 
-  <%= link_to course.name, course_notes_path(course) %> 
-  </li>
-<%end %>
+  <li><%= link_to course.name, course_notes_path(course) %></li>
+<% end %>
 </ul>
 

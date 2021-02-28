@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   def new
   end
 
-
   def create
    u = User.find_by_email(params[:email])
     if u && u.authenticate(params[:password])
@@ -14,8 +13,6 @@ class SessionsController < ApplicationController
       redirect_to '/login'
     end
   end
-
-
 
   def omniauth
     @user = User.create_from_omniauth(auth)
@@ -28,14 +25,11 @@ class SessionsController < ApplicationController
     end
   end
 
-  
-  
   def destroy
     session.delete(:user_id)
-    redirect_to '/'
+    redirect_to root_path
   end
 
-  
   private 
     def auth 
       request.env['omniauth.auth']

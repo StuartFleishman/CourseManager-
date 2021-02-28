@@ -17,6 +17,4 @@ class Course < ApplicationRecord
      order(name: :asc).to_a
   end
 
-
-
 end

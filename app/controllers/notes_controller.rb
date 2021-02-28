@@ -17,18 +17,17 @@ class NotesController < ApplicationController
     if params[:course_id] && @course = Course.find_by_id(params[:course_id])
       @note = @course.notes.build
     else
-      @note = Note.new 
-      @note.build_course
+      redirect_to notes_path
     end
   end 
 
   def create 
     @note = current_user.notes.build(note_params)
-    if @note.save 
-      redirect_to note_path(@note)
-    else 
-      render :new 
-    end
+      if @note.save 
+        redirect_to note_path(@note)
+      else 
+        render :new 
+      end
   end 
 
   def edit 
@@ -63,6 +62,5 @@ class NotesController < ApplicationController
   def find_note
     @note = Note.find(params[:id])
   end
-
 
 end 
